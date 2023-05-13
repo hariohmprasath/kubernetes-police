@@ -1,6 +1,8 @@
 # Setup the environment variables
 export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 export BUCKET_NAME=hardeneks-report-output-$AWS_ACCOUNT_ID
+export AWS_SECRET_ACCESS_KEY=<<ActualSecret>>
+export AWS_ACCESS_KEY_ID=<<ActualKey>>
 
 # List all the EKS clusters in the region
 aws eks list-clusters > clusters.json --region $AWS_REGION
